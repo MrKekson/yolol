@@ -1,0 +1,32 @@
+:error = (:battTarget - :allBattery ) / 1000
+:ti += :ki * :error * 3
+if :ti >= :oMax then :ti = :oMax end
+if :ti <= :oMin then :ti = :oMin end
+dinput = (:allBattery - :battLast) / 100
+:td = :kd * (dinput / 3)
+:tp = :kp * :error
+:output = :tp + :ti - :td
+if :output >= :oMax then :output = :oMax end
+if :output <= :oMin then :output = :oMin end
+:battLast = :allBattery 
+if :mainPowerCycle==1 then :generator = :output end     
+if :mainPowerCycle!=1 then :generator = 0.001 end
+
+goto 1
+
+
+
+
+//allBattery can be any battery, or the average of them
+
+vars needed: 
+kp 3
+ki 0.2
+kd 10
+oMax 66 (fuel chamber max) 
+oMin 0.001 (fchamber min)
+battLast 0
+battTarget 7500 (will try to keep this amount)
+tp 0
+ti 0
+td 0
