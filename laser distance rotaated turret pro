@@ -1,0 +1,19 @@
+xo=4.5 yo=1.8 a=60 mi=12 mx=20 :tc=0 :tf=0
+d=:RangerD if d<mi then d=mi :tc=1 endif d>mx then d=mx :tf=1 end
+axr=atan(-xo/d) ayr=-90+atan(d/yo) 
+axl=-90+atan(d/xo) ayl=-90+atan(d/yo)   
+rx=axr*cos(a)+ayr*sin(a) ry=axr*sin(a)+ayr*cos(a) 
+lx=axl*cos(-a)+ayl*sin(-a) ly=-axl*sin(-a)+ayl*cos(-a) :tcl=0
+
+//if ry<Pmin then ry=pmin :tcl=1 end if ly<Pmin then ly=pmin
+//:LRR=rx :LLR=lx :LRP=ry :LLP=ly
+:d7=rx :d8=lx :d10=ry :d11=ly :d12=d
+goto 1
+
+xo=4.5 yo=1.8 a=60 mi=12 mx=20 :tc=0 :tf=0 a=0.077 b=-0.287 p4=3.142/4
+
+
+:LRange = sqrt(d*d + 5*5)
+
+//:angle1=atan(d/xo) :LRR=-90+:angle1 :LLR=90-:angle1
+//angle2=atan(d/yo) :LRP=-90+angle2 :LLP=-90+angle2
