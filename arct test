@@ -1,0 +1,19 @@
+xo=4.5  pi=3.142 dr=pi/180 rd=180/pi
+d=13  j=0.077 k=-0.287 p4=pi/4 l=p4-a-b v=7000
+
+:d1=atan(-xo/d) :test=-xo/d
+x=(-xo/d) :d2=x 
+//x=x/(pi/2) :d3=x
+
+
+axp=0.972*x-0.1919*x*x*x :d4=axp*rd
+axr=((j*x*x +k)*x*x+l)*x :d5=axr*rd
+axx=p4*x-x*(abs(x)-1)*(0.244+0.066*abs(x)) :d6=axx*rd
+
+
+
+
+
+
+
+
