@@ -1,0 +1,30 @@
+xo=4.5 yo=1.8 mi=12 mx=20 :tc=0 :tf=0 pi=3.142 dr=pi/180 rd=180/pi
+a=60 j=0.972 k=-0.192 l=40500 m=180 v=7000 p2=pi/2
+d=:RangerD+4 if d<mi then d=mi :tc=1 endif d>mx then d=mx :tf=1 end
+x=-xo/d x2=xo/d y=yo/d             :d9=d  
+axr=(j*x-k*x^3)*rd ayr=-(j*y-k*y^3)*rd 
+axl=-(j*x2-k*x2^3)*rd ayl=ayr    
+s=4*a*(m-a)/(l-a*(180-a)) c=1-a^2/v 
+rx=-(axr*c-ayr*s) ry=axr*s+ayr*c  :d6=rx :d5=ry
+s=-s c=-c
+
+lx=-(axl*c-ayl*s) ly=-(axl*s+ayl*c)  :d2=lx :d3=ly
+:LRR=rx :LRP=ry :LLR=lx  :LLP=ly
+goto 3
+
+
+
+
+
+
+
+only uses appromiations
+xo ffset
+yo ffset
+mi min target distance
+mx max targ dist
+a=angle of the turrets from x
+lrr laser right rot 
+lrp laser right pitch
+lrr laser right rot
+lep laser right pitch
