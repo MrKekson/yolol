@@ -6,9 +6,9 @@ x=(-xo/d) :d2=x
 //x=x/(pi/2) :d3=x
 
 
-axp=0.972*x-0.1919*x*x*x :d4=axp*rd
-axr=((j*x*x +k)*x*x+l)*x :d5=axr*rd
-axx=p4*x-x*(abs(x)-1)*(0.244+0.066*abs(x)) :d6=axx*rd
+axp=0.972*x-0.1919*x*x*x :d4=axp*rd                     //shortest but also close-
+axr=((j*x*x +k)*x*x+l)*x :d5=axr*rd                     //not great
+axx=p4*x-x*(abs(x)-1)*(0.244+0.066*abs(x)) :d6=axx*rd   //closest
 
 
 
